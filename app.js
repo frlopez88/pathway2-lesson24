@@ -1,3 +1,6 @@
+let incomeModal 
+let expenseModal 
+
 function hideShowCategory(){
 
     let type = inputType.value
@@ -22,4 +25,20 @@ function hideShowCategory(){
         categoryExpense.style.display="block"
     }
 
+}
+
+
+function showIncomeModal(){
+
+    incomeModal = new bootstrap.Modal(document.getElementById("showIncome")) 
+
+    incomeModal.show()
+
+}
+
+
+function showExpensesModal(){
+    expenseModal = new bootstrap.Modal(document.getElementById("showExpenses")) 
+
+    expenseModal.show()
 }
