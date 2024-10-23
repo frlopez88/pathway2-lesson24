@@ -87,10 +87,24 @@ async function getIncomes(){
 
     if(response.ok){
 
+        let tableLayOut = `<tr>
+                            <th>Date</th>
+                            <th>Category</th>
+                            <th>Amount</th>
+                            </tr> `
+        
         for(let i =0;  i < body.length; i++){
             incomeSummary += body[i].amount
+
+            tableLayOut += `<tr>
+                            <td>${body[i].date}</td>
+                            <td>${body[i].category}</td>
+                            <td>${body[i].amount}</td>
+                            </tr> `
+
         }
         outPutTotalIncome.innerHTML  = `$ ${incomeSummary}`
+        outPutIncomesDetail.innerHTML = tableLayOut
     }
 
     
@@ -118,10 +132,23 @@ async function getExpenses(){
     
     if(response.ok){
 
+        let tableLayOut = `<tr>
+                            <th>Date</th>
+                            <th>Category</th>
+                            <th>Amount</th>
+                            </tr> `
+
         for(let i =0;  i < body.length; i++){
             expenseSumary += body[i].amount
+
+            tableLayOut += `<tr>
+            <td>${body[i].date}</td>
+            <td>${body[i].category}</td>
+            <td>${body[i].amount}</td>
+            </tr> `
         }
         outPutTotalExpense.innerHTML  = `$ ${expenseSumary}`
+        outPutExpensesDetail.innerHTML = tableLayOut
     }
 
 
